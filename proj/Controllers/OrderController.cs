@@ -48,8 +48,7 @@ namespace proj.Controllers
         {
             try
             {
-                var orderDTO = new OrderDTO { Id = model.Id, Name = model.Order };
-                _orderService.MakeOrder(orderDTO);
+                _orderService.MakeOrder(model);
             }
             catch (ValidationExceptions ex)
             {
@@ -64,9 +63,9 @@ namespace proj.Controllers
         {
             try
             {
-                var orderdto=new OrderDTO { Id = model.Id,Name = model.Order }; 
-                var orderdto1=_orderService.Update(orderdto);
-                return Ok(orderdto1);
+                 _orderService.Update(model);
+                //var orderdto1=_orderService.Update(orderdto);
+                return Ok("Upgraded Successfully");
             }
             catch(ValidationExceptions ex)
             {

@@ -27,7 +27,8 @@ namespace proj.Repository
 
         public void Update(EF.Order order)
         {
-            context.Entry(order).State = EntityState.Modified;
+            //context.Orders.Attach(order);
+           context.Entry(order).State = EntityState.Modified;
         }
 
         public void Delete(int id)
@@ -42,10 +43,6 @@ namespace proj.Repository
             context.SaveChanges();
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

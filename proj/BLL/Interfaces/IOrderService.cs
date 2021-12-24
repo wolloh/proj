@@ -5,10 +5,10 @@ namespace proj.BLL.Interfaces
 {
     public interface IOrderService
     {
-        void MakeOrder(OrderDTO order);
+        void MakeOrder(OrderModel order);
         OrderDTO GetOrder(int id);
         IEnumerable<OrderDTO> GetOrders();
-        OrderDTO Update(OrderDTO order);
+        void Update(OrderModel order);
         OrderDTO Delete(int id);
     }
 }
